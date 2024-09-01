@@ -1,0 +1,162 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+}
+
+.header {
+    width: 30%; /* Fixed width for header on desktop */
+    height: 100vh; /* Full height */
+    background-color: #1e1e1e;
+    color: #00ff00;
+    padding: 15px;
+    border-right: 1px solid #333;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.header h1 {
+    color: #ff0000; /* Changed color to red */
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center; /* Align text and icon vertically */
+    gap: 10px; /* Space between text and icon */
+    /* Glowing effect */
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000;
+}
+
+.header h1 svg {
+    fill: #ff0000; /* Ensure icon color matches text */
+}
+
+.typing-text {
+    font-size: 1.1em;
+    overflow: hidden; /* Ensures text is hidden before it fully types */
+    white-space: nowrap;
+    border-right: 0.15em solid #00ff00;
+    animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+    /* Typing animation for title */
+}
+
+.intro {
+    margin-bottom: 15px;
+    /* Adjusted margin to reduce space above the intro section */
+    margin-top: 5px; /* Reduced space above intro */
+}
+
+.intro p {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px; /* Push icons to the bottom */
+}
+
+.social-links a {
+    color: #00ff00;
+    font-size: 1.2em; /* Increase icon size for better visibility */
+}
+
+.social-links a:hover {
+    text-decoration: none;
+    /* Glowing effect for icons */
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+}
+
+.commands {
+    margin-bottom: 15px;
+}
+
+.commands h2 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.commands ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.commands li {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.terminal-input {
+    display: flex;
+    align-items: center;
+    margin-top: auto; /* Push input to bottom */
+}
+
+.prompt {
+    margin-right: 5px;
+    font-size: 1.2em;
+}
+
+input {
+    background: none;
+    border: none;
+    color: #00ff00;
+    font-family: inherit;
+    width: 100%;
+    outline: none;
+    font-size: 1em;
+}
+
+/* Content Area */
+.content {
+    flex: 1; /* Takes remaining space */
+    padding: 15px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-left: 1px solid #333;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        height: auto; /* Adjust height for mobile */
+    }
+
+    .header {
+        width: 100%;
+        height: auto; /* Allow header to adjust height */
+        border-right: none; /* Remove right border on mobile */
+    }
+
+    .content {
+        width: 100%;
+        height: auto; /* Allow content to adjust height */
+        border-left: none; /* Remove left border on mobile */
+        margin-top: 15px; /* Space between header and content */
+        overflow-y: auto; /* Ensure scrolling is enabled */
+    }
+}
+
+/* Typing Animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 20em; } /* Adjust according to text length */
+}
+
+@keyframes blink-caret {
+    from { border-color: transparent; }
+    to { border-color: #00ff00; }
+}

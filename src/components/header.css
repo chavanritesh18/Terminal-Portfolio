@@ -1,0 +1,87 @@
+/* styles.css */
+.container {
+    display: flex;
+  }
+  
+  .header {
+    width: 30%;
+    height: 100vh;
+    padding: 20px;
+    background: #222;
+    color: #0f0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .typing-text {
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #0f0; /* Cursor effect */
+    animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #0f0; }
+  }
+  
+  .intro, .social-links, .commands {
+    margin-top: 20px;
+  }
+  
+  .terminal-input {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #0f0;
+    padding-top: 10px;
+  }
+  
+  .prompt {
+    margin-right: 5px;
+  }
+  
+  .content {
+    width: 70%;
+    height: 100vh;
+    background: #000;
+    color: #0f0;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .intro-desktop {
+    display: none; /* Hidden by default for mobile */
+    margin-top: 20px;
+  }
+  
+  @media (min-width: 769px) {
+    .intro-desktop {
+      display: block; /* Show on desktop */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .header {
+      width: 100%;
+      height: auto;
+    }
+  
+    .content {
+      width: 100%;
+      height: auto;
+    }
+  }
+  

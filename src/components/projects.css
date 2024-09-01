@@ -1,0 +1,12 @@
+@media (max-width: 600px) {
+    .liveProjectButton {
+      width: 100%; /* Ensure buttons are full-width */
+      margin-top: 10px;
+    }
+  
+    .technologies {
+      flex-direction: column; /* Stack tech items vertically on mobile */
+      align-items: flex-start; /* Align items to the start */
+    }
+  }
+  
